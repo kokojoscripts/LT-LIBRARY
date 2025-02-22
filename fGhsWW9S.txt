@@ -73,20 +73,6 @@ local OrionLib = {
     SaveCfg = false
 }
 
-local function AddBackgroundImage()
-    local BackgroundImage = MakeElement("Image", OrionLib.Themes[OrionLib.SelectedTheme].Background)
-    SetProps(BackgroundImage, {
-        Size = UDim2.new(1, 0, 1, 0),
-        Position = UDim2.new(0, 0, 0, 0),
-        ZIndex = -1,
-        ImageColor3 = Color3.fromRGB(255, 50, 50), -- Definindo a cor da imagem de fundo
-        Parent = Orion
-    })
-    return BackgroundImage
-end
-
-local BackgroundImage = AddBackgroundImage()
-
 --Feather Icons https://github.com/evoincorp/lucideblox/tree/master/src/modules/util - Created by 7kayoh
 local Icons = {}
 
@@ -126,7 +112,7 @@ local function AddConnection(Signal, Function)
 	end
 	local SignalConnect = Signal:Connect(Function)
 	table.insert(OrionLib.Connections, SignalConnect)
-	return SignalConnect
+	return SinalConnect
 end
 
 task.spawn(function()
